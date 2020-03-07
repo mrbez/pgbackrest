@@ -1,7 +1,7 @@
 ####################################################################################################################################
-# Db & Repository Storage Helper
+# Repository Storage Helper
 ####################################################################################################################################
-package pgBackRest::Protocol::Storage::Helper;
+package pgBackRest::Storage::Helper;
 
 use strict;
 use warnings FATAL => qw(all);

@@ -27,9 +27,9 @@ use pgBackRest::Common::Log;
 use pgBackRest::Config::Config;
 use pgBackRest::DbVersion;
 use pgBackRest::Manifest;
-use pgBackRest::Protocol::Storage::Helper;
-use pgBackRest::Version;
 use pgBackRest::Storage::Base;
+use pgBackRest::Storage::Helper;
+use pgBackRest::Version;
 
 use pgBackRestTest::Env::Host::HostBaseTest;
 use pgBackRestTest::Env::Host::HostS3Test;

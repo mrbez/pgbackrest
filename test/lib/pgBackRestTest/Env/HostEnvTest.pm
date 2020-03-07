@@ -20,7 +20,7 @@ use pgBackRest::Archive::Common;
 use pgBackRest::Common::Log;
 use pgBackRest::Config::Config;
 use pgBackRest::DbVersion;
-use pgBackRest::Protocol::Storage::Helper;
+use pgBackRest::Storage::Helper;
 
 use pgBackRestTest::Env::Host::HostBackupTest;
 use pgBackRestTest::Env::Host::HostBaseTest;

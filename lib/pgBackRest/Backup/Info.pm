@@ -22,7 +22,7 @@ use pgBackRest::Common::Log;
 use pgBackRest::Config::Config;
 use pgBackRest::InfoCommon;
 use pgBackRest::Manifest;
-use pgBackRest::Protocol::Storage::Helper;
+use pgBackRest::Storage::Helper;
 
 ####################################################################################################################################
 # File/path constants
