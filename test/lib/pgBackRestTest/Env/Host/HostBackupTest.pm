@@ -1309,14 +1309,15 @@ sub infoMunge
     # If the original file content does not exist then load it
     if (!defined($self->{hInfoFile}{$strFileName}))
     {
-        $self->{hInfoFile}{$strFileName} = new pgBackRest::Common::Ini($strFileName, {oStorage => storageRepo(),
-        strCipherPass => !$bManifest ? storageRepo()->cipherPassUser() : $self->cipherPassManifest()});
+        $self->{hInfoFile}{$strFileName} = new pgBackRest::Common::Ini(
+        storageRepo(), $strFileName,
+        {strCipherPass => !$bManifest ? storageRepo()->cipherPassUser() : $self->cipherPassManifest()});
     }
 
     # Make a copy of the original file contents
     my $oMungeIni = new pgBackRest::Common::Ini(
-        $strFileName,
-        {bLoad => false, strContent => iniRender($self->{hInfoFile}{$strFileName}->{oContent}), oStorage => storageRepo(),
+        storageRepo(), $strFileName,
+        {bLoad => false, strContent => iniRender($self->{hInfoFile}{$strFileName}->{oContent}),
         strCipherPass => !$bManifest ? storageRepo()->cipherPassUser() : $self->cipherPassManifest()});
 
     # Load params

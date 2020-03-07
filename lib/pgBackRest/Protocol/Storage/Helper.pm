@@ -14,7 +14,8 @@ use File::Basename qw(basename);
 use pgBackRest::Common::Log;
 use pgBackRest::Config::Config;
 use pgBackRest::LibC qw(:storage);
-use pgBackRest::Storage::Helper;
+use pgBackRest::Storage::Storage;
+use pgBackRest::Version;
 
 ####################################################################################################################################
 # Storage constants
@@ -28,6 +29,12 @@ use constant STORAGE_REPO_ARCHIVE                                   => '<REPO:AR
     push @EXPORT, qw(STORAGE_REPO_ARCHIVE);
 use constant STORAGE_REPO_BACKUP                                    => '<REPO:BACKUP>';
     push @EXPORT, qw(STORAGE_REPO_BACKUP);
+
+####################################################################################################################################
+# Temp file extension
+####################################################################################################################################
+use constant STORAGE_TEMP_EXT                                       => PROJECT_EXE . '.tmp';
+    push @EXPORT, qw(STORAGE_TEMP_EXT);
 
 ####################################################################################################################################
 # Cache storage so it can be retrieved quickly

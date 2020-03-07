@@ -16,7 +16,6 @@ use pgBackRest::Common::String;
 use pgBackRest::Common::Wait;
 use pgBackRest::Config::Config;
 use pgBackRest::Protocol::Storage::Helper;
-use pgBackRest::Storage::Helper;
 use pgBackRest::Manifest;
 
 ####################################################################################################################################
@@ -229,7 +228,7 @@ sub backupLabel
             STORAGE_REPO_BACKUP . qw{/} . PATH_BACKUP_HISTORY . '/' . timestampFormat('%4d', $lTimestampStart),
              {strExpression =>
                 ($strType eq CFGOPTVAL_BACKUP_TYPE_FULL ? '^' : '_') . timestampFileFormat(undef, $lTimestampStart) .
-                ($strType eq CFGOPTVAL_BACKUP_TYPE_FULL ? 'F' : '(D|I)\.manifest\.' . COMPRESS_EXT . qw{$}),
+                ($strType eq CFGOPTVAL_BACKUP_TYPE_FULL ? 'F' : '(D|I)\.manifest\.gz$'),
                 bIgnoreMissing => true}))
     {
         waitRemainder();

@@ -19,7 +19,6 @@ use pgBackRest::Common::Log;
 use pgBackRest::Common::Wait;
 use pgBackRest::Config::Config;
 use pgBackRest::Protocol::Storage::Helper;
-use pgBackRest::Storage::Helper;
 
 ####################################################################################################################################
 # RegEx constants
